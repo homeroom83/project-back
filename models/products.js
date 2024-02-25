@@ -5,6 +5,10 @@ const schema = new Schema({
     type: String,
     required: [true, '缺少商品名稱']
   },
+  link: {
+    type: String,
+    required: [true, '缺少商品連結']
+  },
   price: {
     type: Number,
     required: [true, '缺少商品價格']
