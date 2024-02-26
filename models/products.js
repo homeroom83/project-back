@@ -17,15 +17,11 @@ const schema = new Schema({
     type: String,
     required: [true, '缺少商品圖片']
   },
-  description: {
-    type: String,
-    required: [true, '缺少商品說明']
-  },
   category: {
     type: String,
     required: [true, '缺少商品分類'],
     enum: {
-      values: ['鞋款交流', '鞋款買賣'],
+      values: ['Nike', 'New Balance'],
       message: '商品分類錯誤'
     }
   },
