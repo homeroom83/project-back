@@ -84,7 +84,7 @@ export const get = async (req, res) => {
       .skip((page - 1) * itemsPerPage)
       .limit(itemsPerPage === -1 ? undefined : itemsPerPage)
 
-    const total = await products.estimatedDocumentCount()
+    const total = await products.countDocuments({ sell: true })
     res.status(StatusCodes.OK).json({
       success: true,
       message: '',

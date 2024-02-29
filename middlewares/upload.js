@@ -11,8 +11,8 @@ cloudinary.config({
 
 const upload = multer({
   storage: new CloudinaryStorage({ cloudinary }),
-  fileFilter (req, file, callback) {
-    if (['image/jpeg', 'image/png'].includes(file.mimetype)) {
+  fileFilter(req, file, callback) {
+    if (['image/jpeg', 'image/png', 'image/webp'].includes(file.mimetype)) {
       callback(null, true)
     } else {
       callback(new multer.MulterError('LIMIT_FILE_FORMAT'), false)
